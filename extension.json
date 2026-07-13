@@ -1,0 +1,134 @@
+{
+	"name": "ScreenshotUpload",
+	"version": "1.0.0",
+	"author": [
+		"tvhdev"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:ScreenshotUpload",
+	"descriptionmsg": "screenshotupload-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "media",
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
+	"MessagesDirs": {
+		"ScreenshotUpload": [
+			"i18n"
+		]
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\ScreenshotUpload\\": "src/"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\ScreenshotUpload\\Hooks"
+		}
+	},
+	"Hooks": {
+		"BeforePageDisplay": "main",
+		"ResourceLoaderGetConfigVars": "main"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "ScreenshotUpload/resources"
+	},
+	"ResourceModules": {
+		"ext.screenshotUpload.core": {
+			"scripts": [
+				"screenshot.js",
+				"store.js",
+				"annotator.js"
+			],
+			"styles": [
+				"screenshot.css",
+				"annotator.css"
+			],
+			"messages": [
+				"screenshotupload-error-notimage",
+				"screenshotupload-error-toolarge",
+				"screenshotupload-default-filename",
+				"screenshotupload-annotator-title",
+				"screenshotupload-tool-crop",
+				"screenshotupload-tool-crop-apply",
+				"screenshotupload-tool-crop-cancel",
+				"screenshotupload-tool-rectangle",
+				"screenshotupload-tool-ellipse",
+				"screenshotupload-tool-arrow",
+				"screenshotupload-tool-pen",
+				"screenshotupload-tool-text",
+				"screenshotupload-tool-color",
+				"screenshotupload-tool-width",
+				"screenshotupload-action-undo",
+				"screenshotupload-action-confirm",
+				"screenshotupload-action-cancel",
+				"screenshotupload-text-placeholder"
+			],
+			"dependencies": [
+				"mediawiki.util"
+			]
+		},
+		"ext.screenshotUpload.upload": {
+			"scripts": [
+				"upload.js"
+			],
+			"styles": [
+				"upload.css"
+			],
+			"messages": [
+				"screenshotupload-dropzone-label",
+				"screenshotupload-dropzone-hint",
+				"screenshotupload-error-notimage",
+				"screenshotupload-error-toolarge",
+				"screenshotupload-form-uploading",
+				"screenshotupload-form-uploaded",
+				"screenshotupload-form-failed",
+				"screenshotupload-form-warning",
+				"screenshotupload-editor-comment"
+			],
+			"dependencies": [
+				"ext.screenshotUpload.core",
+				"mediawiki.api",
+				"mediawiki.util"
+			]
+		},
+		"ext.screenshotUpload.editor": {
+			"scripts": [
+				"wikieditor.js"
+			],
+			"messages": [
+				"screenshotupload-editor-uploading",
+				"screenshotupload-editor-success",
+				"screenshotupload-editor-failed",
+				"screenshotupload-editor-exists",
+				"screenshotupload-editor-comment",
+				"screenshotupload-editor-form-hint",
+				"screenshotupload-editor-openupload"
+			],
+			"dependencies": [
+				"ext.screenshotUpload.core",
+				"mediawiki.api",
+				"mediawiki.util",
+				"jquery.textSelection"
+			]
+		}
+	},
+	"config": {
+		"ScreenshotUploadFilenamePrefix": {
+			"value": "Screenshot",
+			"description": "Prefix used when auto-generating a destination filename for a pasted screenshot."
+		},
+		"ScreenshotUploadMaxSize": {
+			"value": 10485760,
+			"description": "Maximum accepted size in bytes for a pasted/dropped screenshot (default 10 MB). The wiki's own $wgMaxUploadSize still applies on the server."
+		},
+		"ScreenshotUploadEnableOnEdit": {
+			"value": true,
+			"description": "If true, users can paste a screenshot while editing a page to upload it and insert a File link at the cursor."
+		},
+		"ScreenshotUploadEditMode": {
+			"value": "form",
+			"description": "How a screenshot pasted into the editor is handled: 'form' (default) inserts a File tag and opens Special:Upload with the image preloaded; 'api' uploads it directly via the API and inserts the tag in one step."
+		}
+	},
+	"manifest_version": 2
+}

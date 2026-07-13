@@ -1,0 +1,17 @@
+# Spin up a throwaway MediaWiki 1.43 LTS with ScreenshotUpload enabled:
+#
+#   docker compose up --build
+#
+# Then open http://localhost:8080 (admin / Admin12345).
+# Data is intentionally ephemeral — `docker compose down` gives a clean wiki.
+services:
+  wiki:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      MW_SERVER: "http://localhost:8080"
+      MW_SITENAME: "ScreenshotWiki"
+      MW_LANG: "de"
+      MW_ADMIN_USER: "Admin"
+      MW_ADMIN_PASS: "Admin12345"

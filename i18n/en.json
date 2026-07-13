@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"tvhdev"
+		]
+	},
+	"screenshotupload-desc": "Lets users paste, crop and annotate screenshots and upload them to the wiki, both from Special:Upload and directly while editing a page.",
+	"screenshotupload-dropzone-label": "Paste or drop a screenshot here",
+	"screenshotupload-dropzone-hint": "Press Ctrl+V to paste a screenshot from the clipboard, or drag an image file into this area. You can crop and annotate it before uploading.",
+	"screenshotupload-error-notimage": "That does not look like an image. Please paste or drop a screenshot.",
+	"screenshotupload-error-toolarge": "The screenshot is too large. The maximum size is $1 MB.",
+	"screenshotupload-form-uploading": "Uploading screenshot…",
+	"screenshotupload-form-uploaded": "Screenshot uploaded.",
+	"screenshotupload-form-failed": "Upload failed: $1",
+	"screenshotupload-form-warning": "Upload not completed ($1). Tick \"Ignore any warnings\" and submit again to override.",
+	"screenshotupload-default-filename": "Screenshot",
+	"screenshotupload-annotator-title": "Crop and annotate screenshot",
+	"screenshotupload-tool-crop": "Crop",
+	"screenshotupload-tool-crop-apply": "Apply crop",
+	"screenshotupload-tool-crop-cancel": "Cancel crop",
+	"screenshotupload-tool-rectangle": "Rectangle",
+	"screenshotupload-tool-ellipse": "Ellipse",
+	"screenshotupload-tool-arrow": "Arrow",
+	"screenshotupload-tool-pen": "Pen",
+	"screenshotupload-tool-text": "Text",
+	"screenshotupload-tool-color": "Colour",
+	"screenshotupload-tool-width": "Line width",
+	"screenshotupload-action-undo": "Undo",
+	"screenshotupload-action-confirm": "Use screenshot",
+	"screenshotupload-action-cancel": "Cancel",
+	"screenshotupload-text-placeholder": "Type text…",
+	"screenshotupload-editor-uploading": "Uploading screenshot…",
+	"screenshotupload-editor-success": "Screenshot uploaded and inserted.",
+	"screenshotupload-editor-failed": "Screenshot upload failed: $1",
+	"screenshotupload-editor-exists": "A file with that name already exists; uploading under a new name.",
+	"screenshotupload-editor-comment": "Uploaded via ScreenshotUpload",
+	"screenshotupload-editor-form-hint": "A file tag was inserted at your cursor. Complete the upload in the new tab to publish the screenshot.",
+	"screenshotupload-editor-openupload": "Open the upload page for this screenshot"
+}

@@ -1,0 +1,58 @@
+/*!
+ * ScreenshotUpload — Special:Upload drop zone styling.
+ * @license GPL-2.0-or-later
+ */
+
+.su-dropzone {
+	margin: 0 0 1em;
+	padding: 1.5em 1em;
+	border: 2px dashed #a2a9b1;
+	border-radius: 4px;
+	text-align: center;
+	background: #f8f9fa;
+	transition: border-color 0.1s, background 0.1s;
+}
+
+.su-dropzone.su-dragover {
+	border-color: #36c;
+	background: #eaf3ff;
+}
+
+.su-dropzone-label {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.su-dropzone-hint {
+	margin-top: 0.3em;
+	color: #54595d;
+	font-size: 0.9em;
+}
+
+.su-dropzone-preview {
+	display: none;
+	max-width: 100%;
+	max-height: 220px;
+	margin-top: 0.8em;
+	border: 1px solid #c8ccd1;
+	border-radius: 2px;
+}
+
+.su-dropzone.su-has-preview {
+	background: #fff;
+}
+
+@media ( prefers-color-scheme: dark ) {
+	.su-dropzone {
+		background: #27292d;
+		border-color: #54595d;
+	}
+
+	.su-dropzone.su-dragover {
+		background: #1b2a4a;
+	}
+
+	.su-dropzone-hint {
+		color: #a2a9b1;
+	}
+}
