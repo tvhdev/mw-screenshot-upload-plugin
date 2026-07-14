@@ -1,5 +1,7 @@
 /*!
  * ScreenshotUpload — crop & annotate editor styling.
+ *
+ * Modal chrome around the embedded Toast UI Image Editor.
  * @license GPL-2.0-or-later
  */
 
@@ -26,6 +28,11 @@
 	overflow: hidden;
 }
 
+.su-modal-tui {
+	width: 96vw;
+	height: 94vh;
+}
+
 .su-titlebar {
 	padding: 0.6em 1em;
 	font-weight: bold;
@@ -33,90 +40,16 @@
 	border-bottom: 1px solid #c8ccd1;
 }
 
-.su-toolbar {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.3em;
-	padding: 0.5em 1em;
-	border-bottom: 1px solid #eaecf0;
-	background: #f8f9fa;
-}
-
-.su-tool {
-	padding: 0.35em 0.7em;
-	border: 1px solid #a2a9b1;
-	border-radius: 2px;
-	background: #fff;
-	color: #202122;
-	cursor: pointer;
-	font-size: 0.9em;
-	line-height: 1.2;
-}
-
-.su-tool:hover {
-	background: #eaf3ff;
-	border-color: #447ff5;
-}
-
-.su-tool.su-active {
-	background: #36c;
-	border-color: #36c;
-	color: #fff;
-}
-
-.su-color {
-	width: 34px;
-	height: 30px;
-	padding: 0;
-	border: 1px solid #a2a9b1;
-	border-radius: 2px;
-	cursor: pointer;
-	background: #fff;
-}
-
-.su-width {
-	width: 90px;
-}
-
-.su-crop-controls {
-	display: inline-flex;
-	gap: 0.3em;
-	margin-inline-start: 0.3em;
-	padding-inline-start: 0.5em;
-	border-inline-start: 1px solid #c8ccd1;
-}
-
-.su-stage {
-	position: relative;
+.su-tui-root {
 	flex: 1;
-	overflow: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1em;
-	background:
-		repeating-conic-gradient( #f0f0f0 0% 25%, #fff 0% 50% ) 50% / 24px 24px;
+	min-height: 0;
+	position: relative;
 }
 
-.su-canvas {
-	max-width: 100%;
-	max-height: 68vh;
-	height: auto;
-	touch-action: none;
-	cursor: crosshair;
-	box-shadow: 0 0 0 1px #c8ccd1;
-}
-
-.su-text-input {
-	position: absolute;
-	z-index: 5;
-	min-width: 4em;
-	padding: 2px 4px;
-	border: 1px dashed #36c;
-	background: rgba( 255, 255, 255, 0.85 );
-	font-weight: bold;
-	font-family: sans-serif;
+/* Toast UI ships its own Load/Download header; we drive the flow with the
+ * footer buttons and a preloaded image, so hide it. */
+.su-tui-root .tui-image-editor-header {
+	display: none;
 }
 
 .su-footer {
@@ -164,12 +97,6 @@
 		border-color: #43464a;
 	}
 
-	.su-toolbar {
-		background: #27292d;
-		border-color: #43464a;
-	}
-
-	.su-tool,
 	.su-btn {
 		background: #2b2d31;
 		border-color: #54595d;

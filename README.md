@@ -11,13 +11,10 @@ form and directly while editing a page.
   an image in. The rest of the standard upload flow (licensing, warnings,
   submit) is untouched — the screenshot is simply placed into the existing file
   field and a destination filename is suggested.
-- **Crop & annotate before uploading.** Pasting or dropping an image opens an
-  editor where you can:
-  - **Crop** to a selected region,
-  - draw **rectangles**, **ellipses**, **arrows**, freehand **pen** strokes and
-    **text**,
-  - choose **colour** and **line width**,
-  - **undo**.
+- **Crop & annotate before uploading.** Pasting or dropping an image opens the
+  [Toast UI Image Editor](https://ui.toast.com/tui-image-editor) where you can
+  crop, draw shapes, arrows and freehand strokes, add text and icons, flip and
+  rotate, then confirm to hand the edited screenshot back for upload.
 - **Paste straight into a page.** While editing a page you can paste a
   screenshot; after cropping/annotating, a `[[File:…]]` tag is inserted at the
   cursor **and** the upload page opens in a new tab with the image already
@@ -78,7 +75,7 @@ The test wiki is intentionally ephemeral; `docker compose down` resets it.
 | [extension.json](extension.json) | Manifest: hooks, ResourceLoader modules, config. |
 | [src/Hooks.php](src/Hooks.php) | Loads the right JS module on `Special:Upload` / edit pages; exposes config to JS. |
 | [resources/screenshot.js](resources/screenshot.js) | Clipboard/drop extraction, validation, filename generation. |
-| [resources/annotator.js](resources/annotator.js) | The crop & annotate canvas editor. |
+| [resources/annotator.js](resources/annotator.js) | Modal wrapper around the vendored Toast UI Image Editor (`resources/vendor/`). |
 | [resources/upload.js](resources/upload.js) | `Special:Upload` drop zone + form integration. |
 | [resources/wikieditor.js](resources/wikieditor.js) | Paste-to-upload-and-insert in the wikitext editor. |
 | [i18n/](i18n/) | Interface messages. |

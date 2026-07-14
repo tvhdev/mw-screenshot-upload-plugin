@@ -37,10 +37,14 @@
 			"scripts": [
 				"screenshot.js",
 				"store.js",
+				"vendor/tui-color-picker.min.js",
+				"vendor/tui-image-editor.min.js",
 				"annotator.js"
 			],
 			"styles": [
 				"screenshot.css",
+				"vendor/tui-color-picker.css",
+				"vendor/tui-image-editor.css",
 				"annotator.css"
 			],
 			"messages": [
@@ -48,20 +52,8 @@
 				"screenshotupload-error-toolarge",
 				"screenshotupload-default-filename",
 				"screenshotupload-annotator-title",
-				"screenshotupload-tool-crop",
-				"screenshotupload-tool-crop-apply",
-				"screenshotupload-tool-crop-cancel",
-				"screenshotupload-tool-rectangle",
-				"screenshotupload-tool-ellipse",
-				"screenshotupload-tool-arrow",
-				"screenshotupload-tool-pen",
-				"screenshotupload-tool-text",
-				"screenshotupload-tool-color",
-				"screenshotupload-tool-width",
-				"screenshotupload-action-undo",
 				"screenshotupload-action-confirm",
-				"screenshotupload-action-cancel",
-				"screenshotupload-text-placeholder"
+				"screenshotupload-action-cancel"
 			],
 			"dependencies": [
 				"mediawiki.util"
